@@ -1,11 +1,19 @@
 ---
 - name: Create a folder on the desktop, update apt cache, and install tree
-  hosts: 192.168.88.22
+  hosts: 
+    - 192.168.88.22
+    - 192.168.88.195
   become: yes
   tasks:
     - name: Update apt cache
       apt:
         update_cache: yes
+
+  tasks:
+    - name: display os release
+      debug: 
+        var: ansible_distribution + " " + ansible_distribution_version
+      when: "'Ubuntu' in ansible_distribution"
          
   
           
