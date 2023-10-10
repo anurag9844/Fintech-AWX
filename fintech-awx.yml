@@ -6,14 +6,6 @@
     - name: Update apt cache
       apt:
         update_cache: yes
-
-    - name: Upgrade 
-      apt:
-        upgrade: yes
-        autoclean: yes   
-        
-    - name: install tree 
-      apt: 
-        name: tree
-        state: present
+         
+  
           
