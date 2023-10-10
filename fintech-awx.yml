@@ -2,7 +2,6 @@
 - name: Create a folder on the desktop, update apt cache, and install tree
   hosts: 
     - 192.168.88.22
-    - 192.168.88.195
   become: yes
   tasks:
     - name: Update apt cache
