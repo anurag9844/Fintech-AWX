@@ -12,5 +12,5 @@
 
     - name: update apt
       apt:
-        update_cache:yes
-      become_user: fintech   
+        update_cache: yes
+      
