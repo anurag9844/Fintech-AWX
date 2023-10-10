@@ -9,3 +9,8 @@
         path: /home/fintech/Desktop/new_folder3
         state: directory
       become_user: fintech
+
+    - name: update apt
+      apt:
+        update_cache:yes
+      become_user: fintech   
