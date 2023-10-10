@@ -12,3 +12,11 @@
       debug:
         var: ansible_distribution + " " + ansible_distribution_version
       when: "'Ubuntu' in ansible_distribution"
+      
+    - name: Get list of installed packages
+      command: dpkg-query -W
+      register: installed_packages
+
+    - name: Display list of installed packages
+      debug:
+        var: installed_packages.stdout_lines
