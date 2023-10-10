@@ -8,11 +8,7 @@
       apt:
         update_cache: yes
 
-  tasks:
-    - name: display os release
-      debug: 
+    - name: Display OS release
+      debug:
         var: ansible_distribution + " " + ansible_distribution_version
       when: "'Ubuntu' in ansible_distribution"
-         
-  
-          
