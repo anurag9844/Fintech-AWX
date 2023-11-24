@@ -17,3 +17,4 @@
     - name: Apply Netplan Configuration
       ansible.builtin.command:
         cmd: netplan apply
+        
