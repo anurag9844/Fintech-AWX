@@ -2,8 +2,6 @@
 - name: Configure Static IP On Ubuntu PC
   hosts: 192.168.88.120
   become: yes
-  vars:
-    ansible_become_password: "root"  # Replace with your actual sudo password
   tasks:
     - name: Set static IP address
       ansible.builtin.lineinfile:
