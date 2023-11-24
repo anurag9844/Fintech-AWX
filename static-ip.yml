@@ -1,0 +1,15 @@
+---
+- name: Configure Static IP On ubuntu Pc
+  hosts: anurag-ubuntu
+  become: yes
+  tasks:
+    - name: Set static IP address
+      ansible.builtin.lineinfile:
+        path: /etc/netplan/01-netcfg.yaml
+        line: "    addresses: ['192.168.88.25/24']"
+      notify: Apply Netplan Configuration
+
+  handlers:
+    - name: Apply Netplan Configuration
+      ansible.builtin.command: netplan apply
+
