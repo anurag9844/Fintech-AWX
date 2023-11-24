@@ -1,5 +1,5 @@
 ---
-- name: Configure Static IP On ubuntu Pc
+- name: Configure Static IP On Ubuntu PC
   hosts: 192.168.88.120
   become: yes
   tasks:
@@ -12,4 +12,3 @@
   handlers:
     - name: Apply Netplan Configuration
       ansible.builtin.command: netplan apply
-
