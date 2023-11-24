@@ -2,13 +2,17 @@
 - name: Configure Static IP On Ubuntu PC
   hosts: 192.168.88.120
   become: yes
+  become_password: root  # Replace with your actual sudo password
   tasks:
     - name: Set static IP address
       ansible.builtin.lineinfile:
         path: /etc/netplan/01-network-manager-all.yaml
-        line: "    addresses: ['192.168.88.25/24']"
+        line: |
+          addresses: ['192.168.88.25/24']
+          gateway4: '192.168.88.195'
       notify: Apply Netplan Configuration
 
   handlers:
     - name: Apply Netplan Configuration
-      ansible.builtin.command: netplan apply
+      ansible.builtin.command:
+        cmd: netplan apply
