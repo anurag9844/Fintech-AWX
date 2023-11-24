@@ -1,6 +1,6 @@
 ---
 - name: Configure Static IP On Ubuntu PC
-  hosts: host_name
+  hosts: anurag-ubuntu
   become: yes
   tasks:
     - name: Set static IP address
