@@ -5,7 +5,7 @@
   tasks:
     - name: Set static IP address
       ansible.builtin.lineinfile:
-        path: /etc/netplan/01-network-manager-all.yaml
+        path: /etc/netplan/01-network-manager-all.yaml 
         line: |
           addresses: ['192.168.88.25/24']
           gateway4: '192.168.88.195'
