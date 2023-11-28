@@ -1,6 +1,6 @@
 ---
 - name: Configure Static IP Address on Ubuntu 
-  hosts: 192.168.88.120
+  hosts: 192.168.88.113
   become: yes
   tasks:
     - name: Configure Netplan
