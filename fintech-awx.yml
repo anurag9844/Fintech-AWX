@@ -20,3 +20,4 @@
     - name: Display list of installed packages
       debug:
         var: installed_packages.stdout_lines
+
