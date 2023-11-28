@@ -1,6 +1,6 @@
 ---
 - name: Configure Static IP On Ubuntu PC
-  hosts: 192.168.88.120
+  hosts: 192.168.88.113
   become: yes
   tasks:
     - name: Set static IP address
