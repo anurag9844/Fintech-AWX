@@ -1,18 +1,24 @@
 ---
 - name: Configure Static IP On Ubuntu PC
-  hosts: 192.168.88.113
+  hosts: 192.168.88.134
   become: yes
   tasks:
     - name: Set static IP address
       ansible.builtin.lineinfile:
-        path: /etc/netplan/01-network-manager-all.yaml 
+        path: /etc/netplan/01-network-manager-all.yaml
         line: |
-          addresses: ['192.168.88.25/24']
-          gateway4: '192.168.88.195'
+          network:
+            version: 2
+            renderer: networkd
+            ethernets:
+              enp1s0:
+                addresses: ['192.168.88.25/24']
+                gateway4: '192.168.88.1'
+                nameservers:
+                  addresses: [192.168.88.195]
       notify: Apply Netplan Configuration
 
   handlers:
     - name: Apply Netplan Configuration
       ansible.builtin.command:
-        cmd: netplan apply
-        
+        cmd: sudo netplan apply
