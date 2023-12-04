@@ -22,3 +22,4 @@
     - name: Apply Netplan Configuration
       ansible.builtin.command:
         cmd: sudo netplan apply
+
