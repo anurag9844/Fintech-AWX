@@ -16,10 +16,9 @@
                 gateway4: '192.168.88.1'
                 nameservers:
                   addresses: [192.168.88.195]
-      notify: Apply Netplan Configuration
 
-  handlers:
     - name: Apply Netplan Configuration
       ansible.builtin.command:
         cmd: sudo netplan apply
-      failed_when: "'Error' in result.stderr"  # Fail only if 'Error' is present in the command's stderr
+      register: netplan_result
+      ignore_errors: yes  
