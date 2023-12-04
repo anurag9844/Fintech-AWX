@@ -1,6 +1,6 @@
 ---
 - name: Configure Static IP On Ubuntu PC
-  hosts: 192.168.88.25
+  hosts: 192.168.88.134
   become: yes
   tasks:
     - name: Set static IP address
@@ -12,7 +12,7 @@
             renderer: networkd
             ethernets:
               enp1s0:
-                addresses: ['192.168.88.26/24']
+                addresses: ['192.168.88.25/24']
                 gateway4: '192.168.88.1'
                 nameservers:
                   addresses: [192.168.88.195]
