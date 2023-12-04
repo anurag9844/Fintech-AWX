@@ -5,7 +5,7 @@
   tasks:
     - name: Set static IP address
       ansible.builtin.lineinfile:
-        path: /etc/netplan/00-installer-config.yaml 
+        path: /etc/netplan/01-netcfg.yaml
         line: |
           network:
             version: 2
